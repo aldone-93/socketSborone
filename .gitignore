@@ -2,6 +2,8 @@
 
 # compiled output
 /dist
+/socketServer/node_modules
+/socketServer/socket-app/node_modules
 /tmp
 /out-tsc
 # Only exists if Bazel was run
