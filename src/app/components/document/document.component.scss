@@ -1,0 +1,44 @@
+textarea {
+  border: none;
+  font-size: 18pt;
+  height: 100%;
+  padding: 20px 0 20px 15px;
+  position: fixed;
+  resize: none;
+  right: 0;
+  top: 0;
+  width: calc(100% - 235px);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.mybar {
+  font-size: 30px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 2s linear infinite;
+}
+.o-battle{
+  margin: 100px 0;
+  height: 20%; 
+  width:100vw;
+  display: inline-flex;
+}
+.otherbar {
+  font-size: 30px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 2s linear infinite;
+}

@@ -1,0 +1,10 @@
+<div style ="height: 100vh; width:100vw" tabindex="0" (keydown)='editDoc()'>
+  <div class="o-battle">
+    <div class="mybar" [style.width]="50+(myInput - otherInput)+'%'" tabindex="0">
+      {{myInput}}
+    </div>
+    <div class="otherbar" [style.width]="50+(otherInput - myInput)+'%'" tabindex="0">
+      {{otherInput}}
+    </div>
+  </div>
+</div>

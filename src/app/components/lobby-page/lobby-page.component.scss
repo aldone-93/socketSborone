@@ -1,0 +1,17 @@
+.o-lobbyPage{
+    display: flex;
+    justify-content: center;
+}
+
+.m-lobbyPage_list{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+.a-lobbyPage_item {
+    border: 4px solid gainsboro;
+    border-radius: 7px;
+    padding: 30px;
+    margin: 5px;
+}

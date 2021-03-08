@@ -1,0 +1,16 @@
+<div class="o-lobbyPage">
+  <div class="m-lobbyPage_list">
+    <ng-container *ngFor="let instance of lobbyArray | keyvalue">
+      <div class="a-lobbyPage_item">
+        <p>id: {{instance.key}}</p>
+        <p>users connected: {{instance.value.loggedUsers}}</p>
+        <a [routerLink]="[ '/battle', instance.key ]">join</a>
+      </div>
+    </ng-container>
+
+    <div>
+      <button (click)="createNewLobby()">create new lobby</button>
+    </div>
+  </div>
+
+</div>
