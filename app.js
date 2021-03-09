@@ -1,7 +1,20 @@
 const app = require('express')();
 const expr = require('express');
+var cors = require('cors')
+let angularApp = expr();
 const http = require('http').Server(app);
-const io = require('socket.io')(http);
+
+const io = require("socket.io")(http, {
+    allowEIO3: true,
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
+    }
+});
+  
+
 const path = require('path');
 
 
@@ -10,16 +23,16 @@ let lobby = {};
 
 let availableLobbies = {};
 
-let angularApp = expr();
 // Serve only the static files form the dist directory
-angularApp.use(expr.static(__dirname + '/dist/socket-app>'));
+angularApp.use(expr.static(__dirname + '/dist/socket-app'));
 
-angularApp.get('/*', function(req,res) {
-    
-angularApp.sendFile(path.join(__dirname+'/dist/socket-app/index.html'));
+angularApp.get('/', function(req,res) {
+    console.log('test')
+     angularApp.sendFile(path.join(__dirname+'/dist/socket-app/index.html'));
 });
+
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+angularApp.listen(4200);
 console.log("angular on port" + process.env.PORT);
 checkAvailableLobbies = function() {
     availableLobbies = {};
@@ -73,7 +86,6 @@ io.on('connection', socket => {
     io.emit('document', lobby);
     console.log(`Socket ${socket.id} has connected`);
 });
-
 http.listen(4444, (res) => {
     console.log('Listening on port' + res);
 });
