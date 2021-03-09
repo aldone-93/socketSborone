@@ -25,7 +25,7 @@ export class DocumentComponent implements OnInit, OnDestroy {
       this.userId = params.get('id');
       this.documentService.joinLobby(this.userId)
       this._docSub = this.documentService.currentDocument.subscribe(document => {
-        this.document = document[this.userId].battle
+        this.document = document;
         this.getUser();
         this.getOtherUser();
       });
