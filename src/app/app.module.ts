@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { DocumentComponent } from './components/document/document.component';
 import { LobbyPageComponent } from './components/lobby-page/lobby-page.component';
 
-const config: SocketIoConfig = { url: 'http://localhost:4444', options: {} };
+const config: SocketIoConfig = { url: 'https://socketaldone.herokuapp.com:4444', options: {} };
 
 const appRoutes = [
   { path: 'battle/:id', component: DocumentComponent},
