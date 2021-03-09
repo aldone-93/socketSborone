@@ -20,4 +20,4 @@ angularApp.get('/', function(req,res) {
 });
 
 // Start the app by listening on the default Heroku port
-angularApp.listen(4200);
+angularApp.listen(process.env.PORT || 4444);
