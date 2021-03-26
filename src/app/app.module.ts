@@ -6,6 +6,7 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { AppComponent } from './app.component';
 import { DocumentComponent } from './components/document/document.component';
 import { LobbyPageComponent } from './components/lobby-page/lobby-page.component';
+import { MatInputModule } from '@angular/material/input';
 
 const config: SocketIoConfig = { url: 'https://socketserveronly.herokuapp.com/', options: {} };
 
@@ -21,6 +22,7 @@ const appRoutes = [
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
     FormsModule,
     SocketIoModule.forRoot(config),
     RouterModule.forRoot(appRoutes)

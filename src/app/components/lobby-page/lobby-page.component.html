@@ -1,5 +1,11 @@
 <div class="o-lobbyPage">
-  <div class="m-lobbyPage_list">
+  <div class="background">
+    <div class="door" id="door">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+  </div>
+  <div class="m-lobbyPage_list" *ngIf="userName; else insertUsername">
     <ng-container *ngFor="let instance of lobbyArray | keyvalue">
       <div class="a-lobbyPage_item">
         <p>id: {{instance.key}}</p>
@@ -12,5 +18,14 @@
       <button (click)="createNewLobby()">create new lobby</button>
     </div>
   </div>
+  
+  <ng-template #insertUsername class="m-lobbyPage-username">
+      <div class="m-lobbyPage_list" style="color: white;">
+          <h2>Username</h2>
+          <div class="a-lobbyPage_input">
+            <input (keydown)="updateUsername($event)" [value]="userName" type="text">
+          </div>
+      </div>
+  </ng-template>
 
 </div>
